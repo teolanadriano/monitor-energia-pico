@@ -6,8 +6,8 @@
 #include "lwip/pbuf.h"
 #include "lwip/tcp.h"
 
-#define WIFI_SSID "MARINETE"
-#define WIFI_PASS "silvamht12"
+#define WIFI_SSID "REDE WIFI"
+#define WIFI_PASS "senha12345"
 #define PORT 80
 #define MATRIX_SIZE 5
 
