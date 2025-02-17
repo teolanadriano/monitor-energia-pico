@@ -9,6 +9,10 @@ PORT = 80
 def index():
     aparelho = request.args.get("aparelho") # Qual aparelho é (ventilador, ar-condicionado, computador...)
     estado = request.args.get("estado")  # "ligar" ou "desligar"
+
+    if not aparelho or not estado:
+        return render_template("index.html")
+        
     if aparelho and estado:
         print(jsonify({"mensagem": f"Comando recebido: {aparelho} {estado}"}))
         print(f"Comando recebido: {aparelho} - {estado}")
@@ -18,12 +22,15 @@ def index():
             print("IP - PORTA: ", RPI_PICO_IP, PORT)
         # Conectar ao socket da Pico
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.settimeout(5) # Para evitar travamentos
                 s.connect((RPI_PICO_IP, PORT))
                 s.sendall(comando.encode())
                 resposta = s.recv(1024).decode()
+                print(f"Resposta da Pico: {resposta}")
         
-            jsonify({"mensagem": resposta})
+            return jsonify({"mensagem": resposta})
         except Exception as e:
+            print(f"Erro na comunicação com a Pico: {e}")
             return jsonify({"erro": str(e)}), 500
     else:
         print("Nenhum comando recebido!")
