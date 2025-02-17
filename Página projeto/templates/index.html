@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Consumo de Energia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Monitor de Consumo de Energia</h1>
+
+    <div class="todos-os-itens">
+        <ul>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                <img src="{{ url_for('static', filename='img/ventilador.png')}}" alt="Ventilador" class="item-img">
+                    <div class="item-info">
+                        <strong>Ventilador</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                    <form action="/" class="btn-container">
+                        <input type="hidden" name="aparelho" value="ventilador"> 
+                        <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                        <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                    </form>
+            </li>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                    <img src="{{ url_for('static', filename='img/ar-condicionado.png')}}" alt="Ar-condicionado" class="item-img">
+                    <div class="item-info">
+                        <strong>Ar-condicionado</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                <form action="/" class="btn-container">
+                    <input type="hidden" name="aparelho" value="ar-condicionado"> 
+                    <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                    <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                </form>
+            </li>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                    <img src="{{ url_for('static', filename='img/televisao.png')}}" alt="Televisão" class="item-img">
+                    <div class="item-info">
+                        <strong>Televisão</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                <form action="/" class="btn-container">
+                    <input type="hidden" name="aparelho" value="televisao"> 
+                    <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                    <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                </form>
+            </li>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                    <img src="{{ url_for('static', filename='img/geladeira.png')}}" alt="Geladeira" class="item-img">
+                    <div class="item-info">
+                        <strong>Geladeira</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                <form action="/" class="btn-container">
+                    <input type="hidden" name="aparelho" value="geladeira"> 
+                    <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                    <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                </form>
+            </li>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                    <img src="{{ url_for('static', filename='img/computador.png')}}" alt="Computador" class="item-img">
+                    <div class="item-info">
+                        <strong>Computador</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                <form action="/" class="btn-container">
+                    <input type="hidden" name="aparelho" value="computador"> 
+                    <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                    <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                </form>
+            </li>
+            <li onclick="toggleButtons(this)">
+                <div class="img-e-item-info">
+                    <img src="{{ url_for('static', filename='img/micro-ondas.png')}}" alt="Micro-ondas" class="item-img">
+                    <div class="item-info">
+                        <strong>Micro-ondas</strong>
+                        <br>
+                    </div>
+                </div>
+                <div class="loading"></div>
+                <form action="/" class="btn-container">
+                    <input type="hidden" name="aparelho" value="micro-ondas"> 
+                    <button class="btn btn-ligar" type="submit" name="estado" value="ligar">Ligar</button>
+                    <button class="btn btn-desligar" type="submit" name="estado" value="desligar">Desligar</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <script type='text/javascript' src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
